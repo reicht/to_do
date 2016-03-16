@@ -1,6 +1,6 @@
-# require 'minitest/autorun'
-# require 'minitest/pride'
-# require_relative '../test/to_do_tests'
+require 'minitest/autorun'
+require 'minitest/pride'
+require_relative '../test/to_do_tests'
 require_relative '../utilities/futilities'
 require_relative '../lib/screener'
 require_relative '../lib/lists'
@@ -27,4 +27,4 @@ end
 
 
 
-Lister.new.run_lister
+# Lister.new.run_lister

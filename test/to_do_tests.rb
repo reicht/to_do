@@ -2,6 +2,29 @@ class ListerTest < Minitest::Test
   def test_list_create
     assert_equal "steve", Lists.new("steve").name
   end
+
+  def test_toggle_completion
+    tester = Lists.new(tester)
+    tester.completion[0] = 0
+    tester.toggle_completion(0)
+    assert_equal 1, tester.completion[0]
+  end
+
+  def test_enter_item
+    tester = Lists.new(tester)
+    tester.enter_item("Testing")
+    assert_equal "Testing", tester.contents[0]
+  end
+
+  def test_binder_create
+    assert Binder.new
+  end
+
+  def test_binding
+    bin = Binder.new
+    test_note = []
+    assert bin.bind(test_note)
+  end
 end
 
 # class FizzBuzzTest < Minitest::Test

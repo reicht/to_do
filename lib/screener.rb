@@ -32,7 +32,7 @@ class Screener
         if list.completion[x] == 0
           print "X"
         else
-          print "Y"
+          print "√"
         end
         Utils.centered_print(list.contents[x].to_s, @width-40)
         puts

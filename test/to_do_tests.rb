@@ -1,5 +1,9 @@
 class ListerTest < Minitest::Test
   def test_list_create
+    assert Lists.new("test")
+  end
+
+  def test_list_name
     assert_equal "steve", Lists.new("steve").name
   end
 
@@ -24,6 +28,16 @@ class ListerTest < Minitest::Test
     bin = Binder.new
     test_note = []
     assert bin.bind(test_note)
+  end
+
+  def test_sequential_binding
+    bin = Binder.new
+    test_note = []
+    note_test = []
+    bin.bind(test_note)
+    assert bin.binder[0]
+    bin.bind(note_test)
+    assert bin.binder[1]
   end
 end
 

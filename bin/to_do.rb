@@ -9,16 +9,16 @@ require_relative '../lib/binder'
 
 class Lister
   def initialize
+    @sc = Scheduler.new
   end
   def run_lister
-    sc = Scheduler.new
     choice = nil
     Screener.new.main_menu
     choice = Utils.get_response("What would you like to do?")
     if choice.to_i == 1
-      @working_list = sc.make_list
-      sc.add_item(@working_list)
-      sc.view_edit(@working_list)
+      @working_list = @sc.make_list
+      @sc.add_item(@working_list)
+      @sc.view_edit(@working_list)
     elsif choice.to_s.upcase == "X"
       exit
     end

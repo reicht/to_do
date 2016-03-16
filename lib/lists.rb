@@ -2,6 +2,10 @@ class Lists
   attr_accessor :name, :contents, :completion
   def initialize(name)
     @name = name
+    #  ASK WHY THIS DON'T WORK
+    # if @name == ""
+    #   @name = "Unnamed List"
+    # end
     @contents = []
     @completion = []
   end

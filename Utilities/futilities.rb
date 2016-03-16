@@ -22,6 +22,7 @@ module Utils
   def Utils.centered_print(msg, width)
     print " " * (width/2 - (msg.length / 2))
     print msg
+    puts
   end
 
 end

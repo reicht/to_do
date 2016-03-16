@@ -21,10 +21,13 @@ class Lister
       @sc.view_edit(@working_list)
     elsif choice.to_s.upcase == "X"
       exit
+    else
+      Utils.get_response("Please select an option")
+      run_lister
     end
   end
 end
 
 
 
-# Lister.new.run_lister
+Lister.new.run_lister

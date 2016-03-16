@@ -10,8 +10,8 @@ module Utils
     end
   end
 
-  def Utils.place_space
-    print " " * 8
+  def Utils.place_space(distance = 8)
+    print " " * distance
   end
 
   def Utils.get_response(prompt = "")
@@ -20,6 +20,8 @@ module Utils
   end
 
   def Utils.centered_print(msg, width)
-    puts " " * (width/2 - (msg.length))
+    print " " * (width/2 - (msg.length / 2))
+    print msg
   end
+
 end

@@ -6,12 +6,17 @@ class Lists
     @completion = []
   end
 
-  def enter_item
-    @contents.push(Utils.get_response("Enter ToDo Item"))
+  def enter_item(entry)
+    @contents.push(entry)
+    @completion.push(0)
   end
 
-  def toggle_completion(item)
-    @completion.push(item)
+  def toggle_completion(slot)
+    if @completion[slot-1] == 0
+      @completion[slot-1] +=1
+    else
+      @completion[slot-1] -=1
+    end
   end
 
 end
